@@ -21,6 +21,7 @@ module.exports = function (app) {
           res.status(200).json({ text: req.body.text, translation: translator.britishToAmericanTranslator(req.body.text) });
           break;
         default:
+          res.status(200).send({ error: 'Invalid value for locale field' })
           break;
       }
     });
