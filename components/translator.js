@@ -20,6 +20,8 @@ class Translator {
       translatedText = translatedText.replace(americanTitles, '<span class="highlight">'+americanToBritishTitles[americanTitles]+'</span>');
     }
 
+    translatedText = translatedText.replace(/([0-9]{1,2})(:)([0-9]{1,2})/g,function(match,p1,p2,p3){return '<span class="highlight">'+p1+'.'+p3+'</span>'})
+
     return translatedText
   }
 
@@ -29,6 +31,8 @@ class Translator {
     for (const britishWord in britishOnly) {
       translatedText = translatedText.replace(britishWord, '<span class="highlight">'+britishOnly[britishWord]+'</span>');
     }
+
+    translatedText = translatedText.replace(/([0-9]{1,2})(.)([0-9]{1,2})/g,function(match,p1,p2,p3){return '<span class="highlight">'+p1+':'+p3+'</span>'})
 
     return translatedText
   }
