@@ -9,9 +9,9 @@ module.exports = function (app) {
   app.route('/api/translate')
     .post((req, res) => {
 
-      if (Object.keys(req.body).length < 2) { res.status(200).send({ error: 'Required field(s) missing' }) }
+      if (Object.keys(req.body).length < 2) { res.status(200).send({ error: 'Required field(s) missing' }) };
 
-      if (!req.body.text) { res.status(200).send({ error: 'Required field(s) missing' }) }
+      if (!req.body.text) { res.status(200).send({ error: 'No text to translate' }) };
 
       switch (req.body.locale) {
         case 'american-to-british':
