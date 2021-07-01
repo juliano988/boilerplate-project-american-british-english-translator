@@ -1,10 +1,10 @@
-code {
-  background: #d0d0d5;
+body{
+  color: #e63946;
+  background-color: #bcd1ff;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+code {
+  background: #d0d0d5;
 }
 
 .form-container {
@@ -13,6 +13,7 @@ code {
 
 textarea {
   width: 100%;
+  background-color: rgba(255, 255, 255,0.3);
 }
 
 #user-stories {
